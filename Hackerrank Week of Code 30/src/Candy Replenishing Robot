@@ -1,0 +1,48 @@
+Candy Replenishing Robot
+
+
+Your submission will run against only preliminary test cases. Full test cases will run at the end of the day.
+Alice is hosting a party! The party lasts for  minutes, and she puts out a bowl of  candies at the beginning of the party. During each minute , a person comes to the bowl and removes  candies.
+
+Alice programs the following algorithm into her robot, Bob, to replenish the candy throughout the party:
+
+If the party is ending (i.e., it's time ), do not refill the bowl.
+If the bowl contains  candies at the end of minute  and , add  candies to the bowl.
+For example, if , , and , then the candy bowl looks like this throughout the party:
+
+image
+
+Note that Bob doesn't replenish the bowl at the party's end, so a total of  candies were added during the party.
+
+Given , , and the number of candies removed from the bowl during each minute, print the total number of new candies Bob adds to the bowl during the party.
+
+Input Format
+
+The first line contains two space-separated integers describing the respective values of  and . 
+The second line contains  space-separated integers describing the respective values of .
+
+Constraints
+
+, where  is the number of candies in the bowl at the start of minute .
+Output Format
+
+Print the total number of new candies Bob adds to the bowl during the party.
+
+Sample Input 0
+
+8 4
+3 1 7 5
+Sample Output 0
+
+11
+Explanation 0
+
+image
+
+The party starts out with  candies in the bowl and the candies removed during each second are denoted by . We break down each minute of the party like so:
+
+Remove  candies, so  candies remain.
+Remove  candies, so  candies remain. Because the party is still going on, Bob refills the bowl by adding  new candies so it again contains  candies.
+Remove  candies, so  candy remains. Because the party is still going on, Bob refills the bowl by adding  new candies so it again contains  candies.
+Remove  candies, so  candies remain. Because the party is ending during this minute, Bob does not refill the bowl.
+We then print the total number of candies added during the party, which is .

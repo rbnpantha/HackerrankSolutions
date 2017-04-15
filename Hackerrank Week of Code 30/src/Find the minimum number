@@ -1,0 +1,42 @@
+Jessica is learning to code and was recently introduced to the  function. This function compares two integers and returns the smaller one. This is what calling the function looks like when comparing two integers  and :
+
+min(a, b)
+Jessica realizes that she can also find the smallest of three integers , , and  if she puts the  function inside of another  function:
+
+min(a, min(b, c))
+For four integers she can nest the functions once more:
+
+min(a, min(b, min(c, d)))
+Jessica is curious about the structure of these function calls and wants to see if she can write a program to construct a string that shows how  number of integers can be compared with nested  functions. Can you help Jessica write this program?
+
+Input Format
+
+The input contains a single integer  (the number of integers to be compared).
+
+Constraints
+
+Output Format
+
+Print the string on a single line. Each integer in the string should be written as 'int' and the string must accurately show how  functions can be called to find the smallest of  integers.
+
+Sample Input 0
+
+2
+Sample Output 0
+
+min(int, int)
+Explanation 0
+
+With an input of  we only have two integers to compare. We don't need to nest the  functions for our output because the  function can take two integers as input.
+
+Sample Input 1
+
+4
+Sample Output 1
+
+min(int, min(int, min(int, int)))
+Explanation 1
+
+With  as our input we'll need to compare  integers. We'll call these integers , , , and . The  function can only call two integers at a time so we'll need to call it for the last two integers,  and . We'll refer to this first use of the  function as . We'll call the  function again to compare the result of  with the next integer, . This will be called . We'll finally call the min function again to compare the result of the  with the last number, , bringing us to a total of  calls of the  function, which is shown in the output.
+
+If you'd like to test out your output string, implement the  function and call it with a for loop such that each previous result is passed into the next call of the  function.

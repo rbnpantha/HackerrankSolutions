@@ -1,0 +1,5 @@
+package edu.mum.assignment11b.lcs;
+
+public class LongestCommonSequence {
+
+}

@@ -1,0 +1,44 @@
+package edu.mum.assignment11b.lcs;
+
+public class LCSMemoized {
+	static int memoizedCount=0;
+	public static void main(String[] args){
+		LCSMemoized lcsMemoized = new LCSMemoized();
+		String s1 = "GAATTCAGTTA";
+		String s2 = "GGATCGA";
+		int[][] L = new int[s1.length()+1][s2.length()+1];		
+		System.out.println("The value of Lowest Common Sequence using memoization is : "+memoizedLCS(s1,s2,s1.length(),s2.length()));
+		System.out.println("The number of memoized count is :"+memoizedCount);
+
+		
+		for(int i=0;i<= s1.length();i++){
+			for(int j=0;j<=s2.length();j++){
+				L[i][j] = -1;
+			}
+		}
+		System.out.println("The value of Lowest Common Sequence using memoization is : "+memoizedLCS(s1,s2,s1.length(),s2.length()),L);
+		System.out.println("The number of memoized count is :"+memoizedCount);
+		
+	}
+	static int memoizedLCS(String s1, String s2, int m, int n, int[][] L){
+		memoizedCount++;
+		if(L[m][n] < 0 ){
+			if(n==0){
+				L[m][0] = 0;
+			}
+			else if(m==0){
+				L[0][n] = 0;
+			}
+			else if(s1.charAt(m-1) == s2.charAt(n-1)){
+				L[m][n] = memoizedLCS(s1,s2,m-1,n-1,L) + 1;
+			}
+			else{
+				L[m][n] = Math.max(memoizedLCS(s1,s2,m,n-1,L), memoizedLCS(s1,s2,m-1,n,L));
+			}
+		}
+		
+		return L[m][n];
+	}
+				
+	}
+}

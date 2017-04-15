@@ -1,0 +1,59 @@
+Kevin was thinking about telephone poles and came up with an idea for a fun programming challenge. There are telephone poles ascending a mountain and each pole has a weight and a unique altitude. Our program must move the poles into  number of stacks, but we can only rearrange the poles according to certain criteria:
+
+Poles can only be moved from higher altitudes to lower altitudes.
+Stacks can only be formed at the initial pole altitudes.
+A stack must consist of at least one pole.
+The image below shows how poles can be moved into  stacks at altitudes  and .
+
+image
+Moving the poles down the mountain also costs money. Moving a pole with weight  and altitude  to an altitude of  where  costs .
+
+Write a program to determine the least amount of money needed to rearrange the poles into  stacks.
+
+Input Format
+
+The first line of input contains two integers  (the number of poles) and  (the number of stacks needed).
+
+Each of the next  lines include two integers  indicating the  pole's altitude and  indicating the  pole's weight. The poles will always be listed from lowest to highest altitude.
+
+Constraints
+
+Output Format
+
+Print the minimum cost of rearranging the poles into  stacks.
+
+Sample Input 0
+
+3 1
+20 1
+30 1
+40 1
+Sample Output 0
+
+30
+Explanation 0
+
+This test case has  poles and needs  stack. We cannot move the bottom pole to the altitudes above it so we'll need to move the other poles to the bottom. The cost to move the highest pole to the bottom is  and the cost to move the middle pole to the bottom is . This makes our total cost .
+
+Sample Input 1
+
+6 2
+10 15
+12 17
+16 18
+18 13
+30 10
+32 1
+Sample Output 1
+
+216
+Explanation 1
+
+The optimal rearrangement for this test case is to create a stack at altitude  and another at altitude . Our final cost will therefore be:
+
+
+
+
+Contest 
+
+

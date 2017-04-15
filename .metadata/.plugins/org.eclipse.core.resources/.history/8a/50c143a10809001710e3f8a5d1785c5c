@@ -1,0 +1,29 @@
+package edu.mum.assignment11b.lcs;
+
+public class LCSMemoized {
+	static int memoizedCount=0;
+	public static void main(String[] args){
+		String s1 = "GAATTCAGTTA";
+		String s2 = "GGATCGA";
+		
+		System.out.println("The value of Lowest Common Sequence using memoization is : "+memoizedLCS(s1,s2,s1.length(),s2.length()));
+		System.out.println("The number of memoized count is :"+memoizedCount);
+	
+	}
+	static int memoizedLCS(String s1, String s2, int m, int n){
+		memoizedCount++;
+		if(n==0){
+			return 0;
+		}
+		else if(m==0){
+			return 0;
+		}
+		else if (s1.charAt(m-1)==s2.charAt(n-1)){
+			return memoizedLCS(s1,s2,m,n-1)+1;
+		}
+		else 
+			
+			return Math.max(memoizedLCS(s1, s2,m,n-1),memoizedLCS(s1,s2,m-1,n));
+				
+	}
+}
